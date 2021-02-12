@@ -8,8 +8,11 @@
 
 <script>
 import Recette from "@/components/Recette";
+
 export default {
-  name: 'Home',
-  components: {Recette},
+  name: 'RecetteDay',
+  components: {
+    Recette
+  },
 }
 </script>

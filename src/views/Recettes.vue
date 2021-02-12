@@ -1,89 +1,10 @@
 <template>
   <h1>Liste des Recettes</h1>
 
-  <div id="recettes">
-    <table>
-      <tr>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-      </tr><tr>
-      <th>
-        <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-      </th>
-      <th>
-        <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-      </th>
-    </tr>
-      <tr>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-        <th>
-          <Recette title="Raclette" description="Je suis une tartiflette"></Recette>
-        </th>
-      </tr>
-    </table>
-  </div>
+  <li v-for="(recette,index) in recettes" :key="index">
+    <Recette v-bind:title=recette.title v-bind:description=recette.description></Recette>
+  </li>
+
 </template>
 
 
@@ -92,7 +13,17 @@ import Recette from "@/components/Recette";
 
 export default {
   name: "Recettes",
-  components: {Recette},
+  components: {
+    Recette
+  },
+  data(){
+    return{
+      recettes : [
+        {title : "Raclette", description : "Je suis une raclette"},
+        {title : "Tarte", description : "Je suis une tarte"},
+      ]
+    }
+  }
 }
 </script>
 
@@ -110,5 +41,6 @@ export default {
 
 #recettes table th {
   width: 10%;
+  height: 200px;
 }
 </style>

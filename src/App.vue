@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-    <router-link to="/">Accueil</router-link> |
+    <router-link to="/">Recette du jour</router-link> |
     <router-link to="/recettes">Recettes</router-link>
   </div>
   <router-view/>
